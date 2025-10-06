@@ -1,3 +1,5 @@
+use crate::struc::User;
+
 mod struc;
 
 // # Now we are practising some basic things which will recap us the part-1 of the harkirat rust series ->
@@ -76,17 +78,27 @@ fn main() {
     let length = get_string_length(&my_string);
     println!("The length of the the stirng is: {}", length);
     // struc::struc("Aditya");
+    // we can also do one thing which is that we can impl the area function in the struct itself. in the struct.rs file.
+    // rust does not know how to print the struct that's why they will print the address of the struct or the memory location of the struct.
     let user1 = struc::create_user();
     println!(
         "The user details are: name:{}, age:{}, email:{}, sign_in:{}",
         user1.name, user1.age, user1.email, user1.sign_in
     );
+
+    let user = User{
+        name:String::from("Halo"),
+        age:22,
+        email:String::from("adi"),
+        sign_in:false,
+    };
+    println!("User is : {}",user.age);
     let length = struc::rect_len();
     let area = length.height * length.widht;
     println!("The area of rectangle is: {}",area);
-
+    
     let squ_len = struc::squ_len();
-    let area_square = squ_len.h*squ_len.w;
+    let area_square = squ_len.h*squ_len.w; 
     println!("The are of square is: {}",area_square);
 }
 
