@@ -1,5 +1,6 @@
+use crate::enu::move_player;
 use crate::struc::User;
-
+mod enu;
 mod struc;
 
 // # Now we are practising some basic things which will recap us the part-1 of the harkirat rust series ->
@@ -86,20 +87,41 @@ fn main() {
         user1.name, user1.age, user1.email, user1.sign_in
     );
 
-    let user = User{
-        name:String::from("Halo"),
-        age:22,
-        email:String::from("adi"),
-        sign_in:false,
+    let user = User {
+        name: String::from("Halo"),
+        age: 22,
+        email: String::from("adi"),
+        sign_in: false,
     };
-    println!("User is : {}",user.age);
+    println!("User is : {}", user.age);
     let length = struc::rect_len();
     let area = length.height * length.widht;
-    println!("The area of rectangle is: {}",area);
-    
+    println!("The area of rectangle is: {}", area);
+
     let squ_len = struc::squ_len();
-    let area_square = squ_len.h*squ_len.w; 
-    println!("The are of square is: {}",area_square);
+    let area_square = squ_len.h * squ_len.w;
+    println!("The are of square is: {}", area_square);
+
+    // enu() // calling the enu module from the enu.rs file.
+
+    let player = enu::Direction::Up;
+    // move_player(player);
+    let player2 = enu::Direction::Down;
+    let player3 = enu::Direction::Left;
+    let player4 = enu::Direction::Right;
+
+    println!(
+        "Direction of the players are: {:?}, {:?}, {:?}, {:?}",
+        player, player2, player3, player4
+    );
+    let player_move = enu::Direction::Up;
+    move_player(player_move);
+
+
+    // we do not need to store the enums in the variable we can directly call them in the function.
+    enu::shape(enu::Shape::Circle(3.65));
+    enu::shape(enu::Shape::Square(38));
+    enu::shape(enu::Shape::Rectangle(3, 2));
 }
 
 /*
