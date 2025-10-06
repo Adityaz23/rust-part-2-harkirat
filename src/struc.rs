@@ -5,6 +5,12 @@ pub struct User{
     pub sign_in: bool,
 }
 
+impl User{
+    fn area(&self)->u32{
+        self.age as u32 * 2
+    }
+} 
+
 pub fn create_user()->User{
     User{
         name: String::from("Aditya"),
