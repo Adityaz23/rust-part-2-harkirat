@@ -1,3 +1,5 @@
+mod struc;
+
 // # Now we are practising some basic things which will recap us the part-1 of the harkirat rust series ->
 // Q. Write a function is_even that taked number as input and returns true if the number is even else false.
 
@@ -72,7 +74,20 @@ fn main() {
     println!("The fib number is: {}", fib(28));
     let my_string = String::from("Harkirat rust series part-2");
     let length = get_string_length(&my_string);
-    println!("The length of the the stirng is: {}",length);
+    println!("The length of the the stirng is: {}", length);
+    // struc::struc("Aditya");
+    let user1 = struc::create_user();
+    println!(
+        "The user details are: name:{}, age:{}, email:{}, sign_in:{}",
+        user1.name, user1.age, user1.email, user1.sign_in
+    );
+    let length = struc::rect_len();
+    let area = length.height * length.widht;
+    println!("The area of rectangle is: {}",area);
+
+    let squ_len = struc::squ_len();
+    let area_square = squ_len.h*squ_len.w;
+    println!("The are of square is: {}",area_square);
 }
 
 /*
@@ -103,6 +118,6 @@ fn fib(num:u64)->u64{
     }
 */
 
-fn get_string_length(s: &str)-> usize{
+fn get_string_length(s: &str) -> usize {
     s.chars().count()
 }
