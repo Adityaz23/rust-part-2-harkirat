@@ -1,6 +1,8 @@
 use crate::enu::move_player;
+use crate::option::{find_capital_chars, find_first_a, get_string, read_content};
 use crate::struc::User;
 mod enu;
+mod option;
 mod struc;
 
 // # Now we are practising some basic things which will recap us the part-1 of the harkirat rust series ->
@@ -117,11 +119,27 @@ fn main() {
     let player_move = enu::Direction::Up;
     move_player(player_move);
 
-
     // we do not need to store the enums in the variable we can directly call them in the function.
     enu::shape(enu::Shape::Circle(3.65));
     enu::shape(enu::Shape::Square(38));
     enu::shape(enu::Shape::Rectangle(3, 2));
+
+    // Option enum function call ->
+    let my_string = String::from("Aditya");
+    match find_first_a(my_string) {
+        Some(index) => println!("The index of first a is: {}", index),
+        None => println!("The letter a is not found in the string"),
+    }
+
+    let my_capital = String::from("deekshA");
+    match find_capital_chars(my_capital) {
+        Some(index) => println!("The index of the capital A is: {}", index),
+        None => println!("The capital A is not found in the stirng"),
+    }
+
+    // Result enum function call ->
+    read_content();
+    get_string();
 }
 
 /*
@@ -142,7 +160,7 @@ fn fib(num:u64)->u64{
 */
 
 /*
-    Q. Write a function get_String_length that takes a string as input and returns the length of the string.
+    Q. Write  function get_String_length that takes a string as input and returns the length of the string.
     let my_string = String::from ("Hello Okay");
     let length = get_String_length(&my_String);
     println!("Length {}",length);
