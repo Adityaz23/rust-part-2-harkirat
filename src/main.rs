@@ -1,5 +1,5 @@
 use crate::enu::move_player;
-use crate::option::{find_capital_chars, find_first_a, get_string, read_content};
+use crate::option::{external_keyboard_test, find_capital_chars, find_first_a, get_string, read_content};
 use crate::struc::User;
 mod enu;
 mod option;
@@ -140,6 +140,7 @@ fn main() {
     // Result enum function call ->
     read_content();
     get_string();
+    external_keyboard_test();
 }
 
 /*

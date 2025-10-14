@@ -49,3 +49,13 @@ pub fn get_string(){
         Err(error)=> println!("failed to read the file which is adi.txt: {}", error)
     } ;
 }
+
+pub fn external_keyboard_test(){
+    // this is the simple example to get the test of the keyboard .
+    let greet3 =  fs::read_to_string("key.md");
+
+    match &greet3{
+        Ok(file_content) => println!("The content of the file trying to read from the md file : {} ", file_content),
+        Err(error)=> println!("Not able to read the md file: {}", error)
+    };
+}
