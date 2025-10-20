@@ -29,5 +29,5 @@ pub fn move_player(dir: Direction){
     }
 }
 
-    // Q. WHat are enums?
+    // Q. What are enums?
     // Ans. Enums are a way let you enumerate over various types of values.

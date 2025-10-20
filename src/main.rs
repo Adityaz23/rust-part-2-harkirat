@@ -1,9 +1,14 @@
+use std::cmp::max;
+use std::cmp::min;
+
 use crate::enu::move_player;
 use crate::option::{external_keyboard_test, find_capital_chars, find_first_a, get_string, read_content};
+use crate::packages::date_time;
 use crate::struc::User;
 mod enu;
 mod option;
 mod struc;
+mod packages;
 
 // # Now we are practising some basic things which will recap us the part-1 of the harkirat rust series ->
 // Q. Write a function is_even that taked number as input and returns true if the number is even else false.
@@ -88,6 +93,12 @@ fn main() {
         "The user details are: name:{}, age:{}, email:{}, sign_in:{}",
         user1.name, user1.age, user1.email, user1.sign_in
     );
+ 
+    let m = max(23, 12);
+    println!("The maximum number is: {}",m);
+
+    let n = min(43, 12);
+    println!("{}",n);
 
     let user = User {
         name: String::from("Halo"),
@@ -141,6 +152,9 @@ fn main() {
     read_content();
     get_string();
     external_keyboard_test();
+
+    // packages function right here ->
+    date_time();
 }
 
 /*
