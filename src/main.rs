@@ -1,7 +1,14 @@
+use std::cmp::max;
+use std::cmp::min;
+
 use crate::enu::move_player;
+use crate::option::{external_keyboard_test, find_capital_chars, find_first_a, get_string, read_content};
+use crate::packages::date_time;
 use crate::struc::User;
 mod enu;
+mod option;
 mod struc;
+mod packages;
 
 // # Now we are practising some basic things which will recap us the part-1 of the harkirat rust series ->
 // Q. Write a function is_even that taked number as input and returns true if the number is even else false.
@@ -86,6 +93,12 @@ fn main() {
         "The user details are: name:{}, age:{}, email:{}, sign_in:{}",
         user1.name, user1.age, user1.email, user1.sign_in
     );
+ 
+    let m = max(23, 12);
+    println!("The maximum number is: {}",m);
+
+    let n = min(43, 12);
+    println!("{}",n);
 
     let user = User {
         name: String::from("Halo"),
@@ -117,11 +130,31 @@ fn main() {
     let player_move = enu::Direction::Up;
     move_player(player_move);
 
-
     // we do not need to store the enums in the variable we can directly call them in the function.
     enu::shape(enu::Shape::Circle(3.65));
     enu::shape(enu::Shape::Square(38));
     enu::shape(enu::Shape::Rectangle(3, 2));
+
+    // Option enum function call ->
+    let my_string = String::from("Aditya");
+    match find_first_a(my_string) {
+        Some(index) => println!("The index of first a is: {}", index),
+        None => println!("The letter a is not found in the string"),
+    }
+
+    let my_capital = String::from("deekshA");
+    match find_capital_chars(my_capital) {
+        Some(index) => println!("The index of the capital A is: {}", index),
+        None => println!("The capital A is not found in the stirng"),
+    }
+
+    // Result enum function call ->
+    read_content();
+    get_string();
+    external_keyboard_test();
+
+    // packages function right here ->
+    date_time();
 }
 
 /*
@@ -142,7 +175,7 @@ fn fib(num:u64)->u64{
 */
 
 /*
-    Q. Write a function get_String_length that takes a string as input and returns the length of the string.
+    Q. Write  function get_String_length that takes a string as input and returns the length of the string.
     let my_string = String::from ("Hello Okay");
     let length = get_String_length(&my_String);
     println!("Length {}",length);
