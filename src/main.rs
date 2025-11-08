@@ -1,9 +1,11 @@
+use crate::chrono::{chrono_d_t, chrono_data_time};
 use crate::enu::move_player;
 use crate::option::{external_keyboard_test, find_capital_chars, find_first_a, get_string, read_content};
 use crate::struc::User;
 mod enu;
 mod option;
 mod struc;
+mod chrono;
 
 // # Now we are practising some basic things which will recap us the part-1 of the harkirat rust series ->
 // Q. Write a function is_even that taked number as input and returns true if the number is even else false.
@@ -141,6 +143,10 @@ fn main() {
     read_content();
     get_string();
     external_keyboard_test();
+
+    // Getting the date and time using the chrono crate ->
+    chrono_data_time();
+    chrono_d_t(12, 2, 19);
 }
 
 /*
