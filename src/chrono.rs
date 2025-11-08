@@ -10,3 +10,8 @@ pub fn chrono_d_t(days:i64,hours:i64,minutes:i64){
     let future = dati + Duration::days(days)+Duration::hours(hours)+Duration::minutes(minutes);
     println!("The future date and time after adding {} days, {} hours and {} minutes are: {}",days,hours,minutes,future)
 }
+pub fn format_date(){
+    let now = Utc::now();
+    let formatted = now.format("%y-%m-%d");
+    println!("Formatted date is: {}",formatted)
+}

@@ -1,4 +1,6 @@
-use crate::chrono::{chrono_d_t, chrono_data_time};
+use ::chrono::format;
+
+use crate::chrono::{chrono_d_t, chrono_data_time, format_date};
 use crate::enu::move_player;
 use crate::option::{external_keyboard_test, find_capital_chars, find_first_a, get_string, read_content};
 use crate::struc::User;
@@ -147,6 +149,7 @@ fn main() {
     // Getting the date and time using the chrono crate ->
     chrono_data_time();
     chrono_d_t(12, 2, 19);
+    format_date();
 }
 
 /*
